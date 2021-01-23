@@ -13,3 +13,8 @@ sudo ./mdloader_linux --first --download ../massdrop_alt_denhai.bin --restart
 ```
 
 Note: Made my edits in default_md to make it easier to pull in upstream changes.
+
+One liner:
+```shell
+qmk compile && cd ~/dev/mdloader && sudo ./mdloader_linux --first --download ~/dev/qmk_firmware/massdrop_alt_default.bin --restart && cd ~/dev/qmk_firmware
+```
