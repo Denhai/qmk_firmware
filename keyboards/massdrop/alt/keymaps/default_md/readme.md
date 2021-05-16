@@ -18,3 +18,27 @@ One liner:
 ```shell
 qmk compile && cd ~/dev/mdloader && sudo ./mdloader_linux --first --download ~/dev/qmk_firmware/massdrop_alt_default.bin --restart && cd ~/dev/qmk_firmware
 ```
+
+# Debugging
+
+rules.mk:
+```
+CONSOLE_ENABLE = yes         # Console for debug
+COMMAND_ENABLE = yes         # Commands for debug and configuration
+```
+
+Run `sudo hid_listen`.
+
+Press: Left Shift+Right Shift then
+* D - for debug mode
+  * Outputs hue and rgb changes to console 
+* V - for version
+
+Example:
+```
+$ sudo hid_listen
+Waiting for device:
+Listening:
+debug: on
+rgb matrix set hsv [EEPROM]: 85,255,150
+```
